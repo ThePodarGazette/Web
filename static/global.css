@@ -1,0 +1,67 @@
+body{
+    --black: #231919;
+    --dark: #3e3030;
+    --dark2: #514040;
+    --dark3: #887575;
+    --light: #cdaaaa;
+    --light2: #efe4e2;
+    --light3: #f1efef;
+    --red: #d8738f;
+    --red2: #ecbcca;
+    --green: #8cc08c;
+    --green2: #c5dfc5;
+    --purple: #a78cc0;
+    --purple2: #d4c7e0;
+
+    --accent: var(--red);
+    
+    --base: var(--light3);
+    --base2: var(--light2);
+    --base3: var(--light);
+    --text: var(--black);
+    --subtext: var(--light);
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        --base: var(--black);
+        --base2: var(--dark);
+        --base3: var(--dark2);
+        --text: var(--light3);
+        --subtext: var(--dark3);
+    }
+}
+
+body{
+    background-color: var(--base);
+    color: var(--text);
+}
+
+h1{
+    color: var(--text);
+    margin: 0px;
+}
+
+h3{
+    font-size: small;
+    color: var(--subtext);
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration: underline;
+    color: var(--accent);
+    border-radius: 2px;
+    transition: all 260ms;
+    font-weight: 600;
+}
+
+a:hover{
+    color: var(--red2);
+    margin-right: 0ch;
+}
+::selection{
+    color: var(--base);
+    background-color: var(--accent);
+}

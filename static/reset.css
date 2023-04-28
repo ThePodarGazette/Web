@@ -1,0 +1,23 @@
+button,body,ul,li,a,input,textarea{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+button,a{
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: none;
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+    /* color: #efedfd !important; */
+    /* font-size: 1.5rem; */
+    /* font-family: "Cantarel"; */
+}
+input,textarea{
+    background-color: #ffffff;
+}
