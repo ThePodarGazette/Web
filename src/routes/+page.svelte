@@ -41,7 +41,7 @@
         background-size: 14vh;
         color: var(--text);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
     }
     
     @media (prefers-color-scheme: light) {
@@ -65,7 +65,7 @@
     .welcome{
         display: flex;
         flex-direction: column;
-        margin: 5vw 7vw;
+        margin-top: 5vw;
         width: 42vw;
     }
 
