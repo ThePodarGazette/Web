@@ -3,7 +3,6 @@
     export let alt:string
     export let isLeft:boolean = false
     import Image from "./Image.svelte";
-    console.log(isLeft)
 </script>
 
 <div class="inlineImg" class:isLeft={isLeft}>

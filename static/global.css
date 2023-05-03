@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@400;600&family=Roboto+Slab&display=swap');
+
 body{
     --black: #231919;
     --dark: #3e3030;
@@ -12,7 +14,7 @@ body{
     --green2: #c5dfc5;
     --purple: #a78cc0;
     --purple2: #d4c7e0;
-
+    
     --accent: var(--red);
     
     --base: var(--light3);
@@ -20,6 +22,12 @@ body{
     --base3: var(--light);
     --text: var(--black);
     --subtext: var(--light);
+    
+    --shadow: 0px 5px 5px -7px var(--black);
+
+    --animSpeed: 260ms;
+    
+    scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,24 +37,30 @@ body{
         --base3: var(--dark2);
         --text: var(--light3);
         --subtext: var(--dark3);
+        --shadow: 0px 5px 5px -7px var(--base);
     }
 }
 
 body{
-    background-color: var(--base);
+    background: var(--base);
     color: var(--text);
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 h1{
     color: var(--text);
     margin: 0px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
 h3{
     font-size: small;
+    font-weight: bold;
     color: var(--subtext);
     margin: 0px;
     margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
 }
 
 a{

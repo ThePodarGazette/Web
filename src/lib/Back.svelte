@@ -1,11 +1,13 @@
-<a class="back" href="/">
+
+<button class="back" href="/" on:click={() => {window.history.back()}}>
     <div>
         ←
     </div>
-</a>
+</button>
 
 <style>
     .back{
+        font-family: "Roboto Slab", sans-serif;
         background-color: var(--base3);
         color: var(--text);
         text-decoration: none;
@@ -18,7 +20,7 @@
         /* position: fixed; */
         user-select: none;
         opacity: 1;
-        transition: opacity 250ms;
+        transition: opacity var(--animSpeed);
         box-shadow: 0px 5px 40px -3px var(--base);
     }
     .back:hover{

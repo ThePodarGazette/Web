@@ -1,7 +1,5 @@
 <script>
-
-    import Back from "./Back.svelte";
-
+    import Back from "$lib/Back.svelte";
 </script>
 
 <Back/>
@@ -11,7 +9,6 @@
 
 <style>
     .page{
-        box-shadow: 0px 5px 40px -3px var(--base);
         background-color: var(--base2);
         border-radius: 5px;
         padding: 5vw;
