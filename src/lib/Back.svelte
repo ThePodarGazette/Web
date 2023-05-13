@@ -1,5 +1,17 @@
+<script>
+    import { createEventDispatcher } from 'svelte';
 
-<button class="back" href="/" on:click={() => {window.history.back()}}>
+    const transition = createEventDispatcher();
+
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+</script>
+
+
+<button class="back" on:click={() => {
+        delay(180)
+        location.href = "/"
+    }}>
     <div>
         ←
     </div>

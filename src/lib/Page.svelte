@@ -1,11 +1,23 @@
 <script>
+    export let pageNo
+
+    import { blur } from 'svelte/transition'
+    import { strOnPage } from "../stores.js";
     import Back from "$lib/Back.svelte";
+    import Navigation from "./Navigation.svelte";
+    
+    strOnPage.set(pageNo);
+
+    let transition = false;
 </script>
 
-<Back/>
-<div class="page">
-    <slot/>
-</div>
+{#if !transition} 
+    <Back/>
+    <div class="page" transition:blur>
+        <slot/>
+        <Navigation on:transition={ transition = true }/>
+    </div>
+{/if}
 
 <style>
     .page{
@@ -15,5 +27,10 @@
         width: 80vw;
         margin: 5vw;
         margin-top: 12vw;
+        opacity: 0;
+        transition: 180ms opacity;
+    }
+    .page{
+        opacity: 1;
     }
 </style>

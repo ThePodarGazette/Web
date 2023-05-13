@@ -2,26 +2,10 @@
 
     import { strContents, strIssueMonth } from "../stores";
     
-    let content = { 
-        // The Writers Labyrinth
-        TWL: [""],
-        // Artsy Nook
-        AN: [""],
-        // Melodys Mirage
-        MM: [""],
-        // Your Fellow Bibliophile
-        YFB: [""],
-        // Hidden Hobbies
-        ADS: [""]
-    }
-    let issueMonth = ""
+    let content = [""], issueMonth:string
 
-    strContents.subscribe(value => {
-        content = value
-    })
-    strIssueMonth.subscribe(value => {
-        issueMonth = value
-    })
+    strContents.subscribe(value => { content = value })
+    strIssueMonth.subscribe(value => { issueMonth = value })
 </script>
 
 <h1>Contents.</h1>
@@ -29,9 +13,9 @@
     <dt>
         The Writers Labyrinth
     </dt>
-    {#each content.TWL as i, n}
+    {#each content[0] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/The Writers Labyrinth/{ n + 1 }">
+            <a href="/Issues/{ issueMonth }/The Writer's Labyrinth/{ a + 1 }">
                 { i }
             </a>
         </dd>
@@ -39,9 +23,9 @@
     <dt>
         The Artsy Nook
     </dt>
-    {#each content.AN as i, n}
+    {#each content[1] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/Artsy Nook/{ n + 1 }">
+            <a href="/Issues/{ issueMonth }/Artsy Nook/{ a + 1 }">
                 { i }
             </a>
         </dd>
@@ -49,9 +33,9 @@
     <dt>
         The Melody's Mirage
     </dt>
-    {#each content.MM as i, n}
+    {#each content[2] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/Melody's Mirage/{ n + 1 }">
+            <a href="/Issues/{ issueMonth }/Melody's Mirage/{ a + 1 }">
                 { i }
             </a>
         </dd>
@@ -59,9 +43,9 @@
     <dt>
         Your Fellow Bibliophile
     </dt>
-    {#each content.YFB as i, n}
+    {#each content[3] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/Your Fellow Bibliophile/{ n + 1 }">
+            <a href="/Issues/{ issueMonth }/Your Fellow Bibliophile/{ a + 1 }">
                 { i }
             </a>
         </dd>
@@ -69,9 +53,9 @@
     <dt>
         Hidden Hobbies
     </dt>
-    {#each content.ADS as i, n}
+    {#each content[4] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/Hidden Hobbies/{ n + 1 }">
+            <a href="/Issues/{ issueMonth }/Hidden Hobbies/{ a + 1 }">
                 { i }
             </a>
         </dd>

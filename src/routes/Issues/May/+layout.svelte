@@ -1,18 +1,18 @@
 <script>
-    import { strContents, strIssueMonth, strIssueName } from "../../../stores.js";
-    strContents.set({
+    import { strContents, strIssueMonth, strIssueName, strOnPage } from "../../../stores.js";
+    strContents.set([
             // The Writers Labyrinth
-            TWL: ["NO IDEA"],
+            ["NO IDEA"],
             // Artsy Nook
-            AN: ["HUGE NERD STUFF"],
+            ["HUGE NERD STUFF"],
             // Melodys Mirage
-            MM: ["WHERE ARE THE COMICS??"],
+            ["WHERE ARE THE COMICS??"],
             // Your Fellow Bibliophile
-            YFB: ["hjgsfjsgdjhsgdfhjgjs"],
+            ["hjgsfjsgdjhsgdfhjgjs"],
             // Hidden Hobbies
-            ADS: ["BORING!!","also i wanted to test", "if you could put multiple things here"]
-        }
-    )
+            ["BORING!!","also i wanted to test", "if you could put multiple things here"]
+    ])
+    strOnPage.set(0)
     strIssueMonth.set("May")
     strIssueName.set("Shimmering simmering summer")
 </script>
