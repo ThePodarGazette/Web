@@ -1,15 +1,16 @@
 <script lang="ts">
     import Page from "./Page.svelte";
     import ContentList from "./ContentList.svelte";
-    import { strIssueMonth, strIssueName } from "../stores";
+    import { strIssueMonth, strIssueName, strOnPage } from "./stores";
 
     let issueMonth:string, issueName:string
 
     strIssueMonth.subscribe(value => { issueMonth = value })
     strIssueName.subscribe(value => { issueName = value })
+    strOnPage.set(0)
 </script>
 
-<Page pageNo=0>
+<Page>
     <div class="content">
         <h1>{ issueMonth } 2023.</h1>
         <h3>{ issueName }</h3>

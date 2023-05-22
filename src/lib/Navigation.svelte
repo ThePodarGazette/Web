@@ -1,5 +1,5 @@
 <script>
-    import { strContents, strOnPage, strIssueMonth } from "../stores.js";    
+    import { strContents, strOnPage, strIssueMonth } from "./stores.js";    
     
     let contents, onPage, issueMonth
 

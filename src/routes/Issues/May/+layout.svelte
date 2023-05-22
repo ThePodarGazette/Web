@@ -1,5 +1,5 @@
 <script>
-    import { strContents, strIssueMonth, strIssueName, strOnPage } from "../../../stores.js";
+    import { strContents, strIssueMonth, strIssueName, strOnPage } from "$lib/stores.js";
     strContents.set([
             // The Writers Labyrinth
             ["NO IDEA"],

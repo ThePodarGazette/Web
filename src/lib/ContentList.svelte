@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { strContents, strIssueMonth } from "../stores";
+    import { strContents, strIssueMonth } from "$lib/stores";
     
     let content = [""], issueMonth:string
 
@@ -15,7 +15,7 @@
     </dt>
     {#each content[0] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/The Writer's Labyrinth/{ a + 1 }">
+            <a href="/Issues/{ issueMonth }/The Writers Labyrinth/{ a + 1 }">
                 { i }
             </a>
         </dd>
@@ -35,7 +35,7 @@
     </dt>
     {#each content[2] as i, a}
         <dd>
-            <a href="/Issues/{ issueMonth }/Melody's Mirage/{ a + 1 }">
+            <a href="/Issues/{ issueMonth }/Melodys Mirage/{ a + 1 }">
                 { i }
             </a>
         </dd>

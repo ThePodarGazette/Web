@@ -1,23 +1,22 @@
 <script>
-    export let pageNo
-
-    import { blur } from 'svelte/transition'
-    import { strOnPage } from "../stores.js";
+    //TODO: Find a way to fix anims
+    // import { blur } from 'svelte/transition'
     import Back from "$lib/Back.svelte";
     import Navigation from "./Navigation.svelte";
     
-    strOnPage.set(pageNo);
+    // let transitioning = false;
 
-    let transition = false;
 </script>
 
-{#if !transition} 
+<!-- {#if !transitioning} -->
     <Back/>
-    <div class="page" transition:blur>
+    <div class="page" >
+    <!-- transition:blur> -->
         <slot/>
-        <Navigation on:transition={ transition = true }/>
+        <Navigation/>
+        <!-- on:transition={ transitioning = true } -->
     </div>
-{/if}
+<!-- {/if} -->
 
 <style>
     .page{
