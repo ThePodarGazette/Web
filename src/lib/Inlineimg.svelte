@@ -25,4 +25,7 @@
     .inlineImg div{
         margin: 0em 1em;
     }
+    .isLeft div{
+        margin: 0em 0em;
+    }
 </style>

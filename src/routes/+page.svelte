@@ -4,7 +4,7 @@
 
 <div class="body"> <!-- i know this is funny but sveltekit for some reason ignores changes to body across pages leading to weird breakages -->
     <div class="newsStand">
-        <IssuePreview isNew issueMonth="May" issueName="The Simmering Shimmering Sunshine"/>
+        <IssuePreview isNew issueMonth="May" issueName="Simmering Shimmering Summers"/>
     </div>
 
     <div class="welcome">
