@@ -3,5 +3,5 @@
     import Image from "$lib/Image.svelte";
 </script>
 <Page Page=7 title="Midsummer Mysteries Book Review">
-    <Image fillWidth src="/Issues/May/7.png" alt="" disableAnims/>
+    <Image fillWidth src="/Issues/May/7.jpg" alt="" disableAnims/>
 </Page>

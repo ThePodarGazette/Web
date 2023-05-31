@@ -3,5 +3,5 @@
     import Image from "$lib/Image.svelte";
 </script>
 <Page Page=20 title="Credits">
-    <Image fillWidth src="/Issues/May/20.png" alt="" disableAnims/>
+    <Image fillWidth src="/Issues/May/20.jpg" alt="" disableAnims/>
 </Page>
