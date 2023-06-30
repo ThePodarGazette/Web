@@ -7,7 +7,7 @@
 
 <a href="/Issues/{ issueMonth }" title="{ issueMonth }">
     <!-- Hardcoded poster name + location to ensure consistency -->
-    <Image disableAnims src="Issues/{ issueMonth }/Preview.jpg" alt="A poster of the { issueMonth } Issue"/>
+    <Image disableAnims src="Issues/{ issueMonth }/1.jpg" alt="A poster of the { issueMonth } Issue"/>
     <div class="description">
         <div class="name">
             { issueName }
