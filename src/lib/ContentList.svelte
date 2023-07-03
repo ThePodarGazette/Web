@@ -1,29 +1,64 @@
-<script>
+<script lang="ts">
 
-    import { strContents, strIssueMonth, strIssueArticlesTypes } from "$lib/stores.js";
+    import { strContents, strIssueMonth } from "$lib/stores";
     
-    let content = [""] 
-    let issueArticleTypes
-    let issueMonth = ""
+    let content = [""], issueMonth:string
 
     strContents.subscribe(value => { content = value })
-    strIssueArticlesTypes.subscribe(value => { issueArticleTypes = value })
     strIssueMonth.subscribe(value => { issueMonth = value })
 </script>
 
 <h1>Contents.</h1>
 <dl>
-    {#each issueArticleTypes as topic, i}
-        <dt>
-            { topic }
-        </dt>
-        {#each content[i] as contents, o}
-            <dd>
-                <a href="/Issues/{ issueMonth }/{ topic }/{ o + 1 }">
-                    { contents }
-                </a>
-            </dd>
-        {/each}
+    <dt>
+        The Writers Labyrinth
+    </dt>
+    {#each content[0] as i, a}
+        <dd>
+            <a href="/Issues/{ issueMonth }/The Writers Labyrinth/{ a + 1 }">
+                { i }
+            </a>
+        </dd>
+    {/each}
+    <dt>
+        The Artsy Nook
+    </dt>
+    {#each content[1] as i, a}
+        <dd>
+            <a href="/Issues/{ issueMonth }/Artsy Nook/{ a + 1 }">
+                { i }
+            </a>
+        </dd>
+    {/each}
+    <dt>
+        The Melody's Mirage
+    </dt>
+    {#each content[2] as i, a}
+        <dd>
+            <a href="/Issues/{ issueMonth }/Melodys Mirage/{ a + 1 }">
+                { i }
+            </a>
+        </dd>
+    {/each}
+    <dt>
+        Your Fellow Bibliophile
+    </dt>
+    {#each content[3] as i, a}
+        <dd>
+            <a href="/Issues/{ issueMonth }/Your Fellow Bibliophile/{ a + 1 }">
+                { i }
+            </a>
+        </dd>
+    {/each}
+    <dt>
+        Hidden Hobbies
+    </dt>
+    {#each content[4] as i, a}
+        <dd>
+            <a href="/Issues/{ issueMonth }/Hidden Hobbies/{ a + 1 }">
+                { i }
+            </a>
+        </dd>
     {/each}
 </dl>
 
