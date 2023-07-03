@@ -70,7 +70,6 @@ a{
 
 a:hover{
     color: var(--red2);
-    margin-right: 0ch;
 }
 ::selection{
     color: var(--base);
@@ -92,6 +91,13 @@ button{
 button:hover{
     opacity: 0.9;
 }
-button div{
-    margin:auto;
+button *{
+    margin: auto;
+    text-decoration: none;
+    color: inherit;
+    width: 2em;
+    /* height: 2em; */
+}
+b{
+    color: var(--accent)
 }

@@ -1,77 +1,68 @@
 <script>
-    import { strContents, strOnPage, strIssueMonth } from "./stores.js";    
+    import { strContents, strOnPage, strIssueMonth, strIssueArticlesTypes } from "$lib/stores.js";    
     
-    let contents, onPage, issueMonth
-
-    strContents.subscribe((value) => contents = value)
-    strOnPage.subscribe((value) => onPage = value)
-    strIssueMonth.subscribe((value) => {issueMonth = value})
+    let contents = []
+    let onPage = 0
+    let issueMonth = ""
+    let issueArticleTypes = []
     
-    let nav = []
+    let url
 
-    for (let i = 0; i < contents.length; i++) {
-        let type
-        switch (i - 1) {
-            case 0:  
-                type = "The Writers Labyrinth"
-                break;
-            case 1:
-                type = "Artsy Nook"
-                break;
-            case 2:
-                type = "Melodys Mirage"
-                break;
-            case 3:
-                type = "Your Fellow Bibliophile"
-                break;
-            case 4:
-                type = "Ads"
-                break;
-            default:
-                break;
+    strContents.subscribe(value => {
+        contents = value;
+    })
+    strOnPage.subscribe(value => {
+        onPage = value;
+    })
+    strIssueMonth.subscribe(value => {
+        issueMonth = value;
+    })
+    strIssueArticlesTypes.subscribe(value => {
+        issueArticleTypes = value;
+    })
+    
+    function generateNavList(issueMonth ,contents, issueArticleTypes) {
+        let navigationList = []
+        for (let i = 0; i < issueArticleTypes.length; i++) {
+    
+            let topics = issueArticleTypes[i];
+    
+            for (let o = 0; o < contents[i].length; o++) {
+                navigationList.push(`/Issues/${issueMonth}/${topics}/${o + 1}`);
+            }
         }
-        for (let f = 0; f < contents[i].length; f++) {
-            nav.push(`${type}/${f + 1}`)
-        }
-    }
-    
-    import { createEventDispatcher } from 'svelte';
-
-	const transition = createEventDispatcher();
-
-    // i am running out of names
-    function transitionTime(){
-        transition('transition');
+        return navigationList
     }
 
-    const delay = ms => new Promise(res => setTimeout(res, ms));
+    const nav = generateNavList(issueMonth ,contents, issueArticleTypes)
 </script>
 
 <div class="navigation">
-    <button href={`/I${issueMonth}/${nav[onPage - 1]}`} disabled={onPage == 0} class="back" on:click={()=>{
-        strOnPage.set(onPage-1)
-        transitionTime()
-        delay(180)
-        location.href = `/Issues/${issueMonth}/${nav[onPage]}`
-     }}>
-        <div>
+    <button disabled={onPage === 0} on:click={()=>{
+        if (onPage === 1) {
+            url = "/Issues/" + issueMonth
+        }
+        else{
+            url = nav[onPage - 2]
+        }
+        onPage--
+    }}>
+        <a href="{url}">
             ←
-        </div>
+        </a>
     </button>
     <div class="currentpage">
         <div>
-            {onPage}/3
+            {onPage}/{nav.length}
         </div>
     </div>
-    <button disabled={onPage == nav.length} class="next" on:click={()=>{
-            strOnPage.set(onPage+ 1)
-            transitionTime()
-            delay(180)
-            location.href = `/Issues/${issueMonth}/${nav[onPage]}`
-         }}>
-        <div>
+    <button disabled={onPage === nav.length} on:click={()=>{
+        onPage++
+        url = nav[onPage - 1]
+    }}>
+        <a href="{url}">
             →
-        </div> 
+        </a> 
     </button>
 </div>
 
