@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
     import Page from "./Page.svelte";
     import ContentList from "./ContentList.svelte";
-    import { strIssueMonth, strIssueName, strOnPage } from "$lib/stores.js";
+    import { strIssueMonth, strIssueName, strOnPage } from "./stores";
 
-    let issueMonth, issueName
+    let issueMonth:string, issueName:string
 
     strIssueMonth.subscribe(value => { issueMonth = value })
     strIssueName.subscribe(value => { issueName = value })

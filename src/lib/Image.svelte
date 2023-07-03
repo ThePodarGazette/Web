@@ -2,15 +2,15 @@
     export let src:string
     export let alt:string = "This image failed to load"
     export let disableAnims:boolean = false
-    export let fillWidth:boolean = false
 </script>
 
-<img src="{ src }" alt="{ alt }" class:fillWidth={fillWidth} class:disableAnims={disableAnims}>
+<img src="{ src }" alt="{ alt }" class:disableAnims={disableAnims}>
 
 <style>
     .disableAnims:hover{
         filter: brightness(1);
     }
+
     img{
         background-color: var(--base);
         max-width: 40vw;
@@ -26,10 +26,5 @@
     
     img:active{
         object-fit: scale-down;
-    }
-
-    .fillWidth{
-        max-width: 80vw;
-        width: 80vw;
     }
 </style>
